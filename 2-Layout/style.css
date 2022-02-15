@@ -1,0 +1,89 @@
+@import url(./base.css);
+
+body {
+  display: grid;
+  grid-template-rows: 10rem 2rem auto 2rem;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  grid-area: header;
+  padding: 1rem;
+}
+
+header nav menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+
+body > nav menu {
+  grid-area: nav;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    display: grid;
+    grid-template-columns: 10rem auto;
+    grid-template-rows: 5rem auto 2rem;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer footer";
+    min-height: 100vh;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    grid-area: header;
+  }
+
+  body > nav menu {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
